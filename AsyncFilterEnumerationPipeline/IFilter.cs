@@ -1,4 +1,4 @@
-﻿namespace AsyncFilterEnumerablePipeline;
+﻿namespace AsyncFilterEnumerationPipeline;
 
 /// <summary>
 /// Фильтр

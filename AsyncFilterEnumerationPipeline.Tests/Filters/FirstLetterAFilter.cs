@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace AsyncFilterEnumerablePipeline.Filters;
+namespace AsyncFilterEnumerationPipeline.Tests.Filters;
 
 /// <inheritdoc />
 public class FirstLetterAFilter : IFilter<string>
