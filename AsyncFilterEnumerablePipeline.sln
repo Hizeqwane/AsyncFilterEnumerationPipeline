@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncFilterEnumerablePipeline", "AsyncFilterEnumerablePipeline\AsyncFilterEnumerablePipeline.csproj", "{2BC79C88-01AA-4723-BD69-674FA1EBF242}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncFilterEnumerablePipeline.Tests", "AsyncFilterEnumerablePipeline.Tests\AsyncFilterEnumerablePipeline.Tests.csproj", "{85A3C701-AD3C-4F2F-BBC1-5FBE8017C11B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BC79C88-01AA-4723-BD69-674FA1EBF242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC79C88-01AA-4723-BD69-674FA1EBF242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC79C88-01AA-4723-BD69-674FA1EBF242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC79C88-01AA-4723-BD69-674FA1EBF242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85A3C701-AD3C-4F2F-BBC1-5FBE8017C11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85A3C701-AD3C-4F2F-BBC1-5FBE8017C11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85A3C701-AD3C-4F2F-BBC1-5FBE8017C11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85A3C701-AD3C-4F2F-BBC1-5FBE8017C11B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
