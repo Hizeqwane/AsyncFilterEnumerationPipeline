@@ -17,10 +17,50 @@ _services.AddPipeline<string>("first")             // Регистрируем �
          .Build();                                 // Завершение построение пайплайна
 ```
 
-Получение экземпляра пайплайна
+# Работа  с пайплайном
+## Объект пайплайна
 
+Сам объект пайплайна представлен классом Pipeline<T> с методом Apply:
+
+```
+Task<List<T>> Apply(IEnumerable<T> source, CancellationToken cancellationToken = default)
+```
+
+Таким образом пайплайн позволяет асинхронно получить список отфильтрованных значений.
+
+## Получение экземпляра пайплайна
+
+Для получения по ключу требуется вызвать метод GetKeyedService у IServiceProvider.
 ```
 var firstPipeline = provider.GetKeyedService<Pipeline<string>>("first"); // provider - IServiceProvider
 ```
 
+В случае, когда пайплайн с параметром единственный - можем получить пайплайн через конструктор (DI).
+
+# Тесты
 Проект содержит демо в виде тестов для двух строковых пайплайнов
+
+```
+_services = new ServiceCollection();
+
+_services.AddPipeline<string>("first")
+    .AddFilter<string, EvenFilter>()
+    .AddFilter<string, FirstLetterAFilter>()
+    .Build();
+
+_services.AddPipeline<string>("second")
+    .AddFilter<string, NotEvenFilter>()
+    .AddFilter<string, FirstLetterIFilter>()
+    .Build();
+
+---
+
+var firstPipeline = provider.GetKeyedService<Pipeline<string>>("first")!;
+var secondPipeline = provider.GetKeyedService<Pipeline<string>>("second")!;
+
+var firstResult = await firstPipeline.Apply(_strList);
+Assert.That(firstResult, Is.EqualTo(_firstRightAnswer));
+
+var secondResult = await secondPipeline.Apply(_strList);
+Assert.That(secondResult, Is.EqualTo(_secondRightAnswer));
+```
